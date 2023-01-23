@@ -1,0 +1,126 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in library 'autolang'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--lib",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang",
+					"kind": "lib"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'autolang-translate'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=autolang-translate",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang-translate",
+					"kind": "bin"
+				}
+			},
+			"args": [
+				"lea.json",
+				"-r"
+			],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'autolang-to-mapping'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=autolang-to-mapping",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang-to-mapping",
+					"kind": "bin"
+				}
+			},
+			"args": [
+				"toki.csv",
+				"lea-dict.csv",
+				"lea.json"
+			],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'autolang-to-mapping'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=autolang-to-mapping",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang-to-mapping",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'autolang-freqs'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=autolang-freqs",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang-freqs",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'autolang-freqs'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=autolang-freqs",
+					"--package=autolang"
+				],
+				"filter": {
+					"name": "autolang-freqs",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
