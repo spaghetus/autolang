@@ -88,6 +88,9 @@ fn main() {
 			*entry += 1;
 			max = *entry.max(&mut max);
 		}
+		for word in dictionary {
+			frequencies.entry(word).or_insert(0);
+		}
 		frequencies
 	};
 
